@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features | NeuralTrade AI</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <canvas id="three-canvas"></canvas>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo"><span>📈</span> NeuralTrade</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html" class="active">Features</a></li>
+            <li><a href="demo.html">Live Demo</a></li>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank" class="nav-cta">GitHub ↗</a>
+        <button class="mobile-menu-btn">☰</button>
+    </nav>
+
+    <section class="hero" style="min-height: 60vh; padding-top: 10rem;">
+        <div class="hero-content">
+            <div class="hero-badge fade-in">Platform Features</div>
+            <h1 class="hero-title fade-in stagger-1">Powerful Features.<br>Simple Interface.</h1>
+            <p class="hero-subtitle fade-in stagger-2">
+                Everything you need to analyze, predict, and understand stock markets — all in one beautiful dashboard.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="features-grid">
+            <div class="tilt-card fade-in stagger-1">
+                <div class="glow-border"></div>
+                <div class="card-icon">📡</div>
+                <h3>Live Data Fetching</h3>
+                <p>Connects directly to Yahoo Finance via yFinance API to pull real-time and historical stock data for any ticker symbol worldwide.</p>
+                <div style="margin-top: 1rem;">
+                    <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid rgba(0,240,255,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-cyan);">yFinance API</span>
+                    <span style="display: inline-block; background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-purple); margin-left: 0.5rem;">Real-time</span>
+                </div>
+            </div>
+
+            <div class="tilt-card fade-in stagger-2">
+                <div class="glow-border"></div>
+                <div class="card-icon">🧬</div>
+                <h3>30+ Engineered Features</h3>
+                <p>Automatically extracts and engineers technical indicators including RSI, MACD, Bollinger Bands, moving averages, volatility metrics, and lag features.</p>
+                <div style="margin-top: 1rem;">
+                    <span style="display: inline-block; background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-green);">Auto-Engineered</span>
+                </div>
+            </div>
+
+            <div class="tilt-card fade-in stagger-3">
+                <div class="glow-border"></div>
+                <div class="card-icon">🎯</div>
+                <h3>Auto Model Selection</h3>
+                <p>Trains 4 ML models simultaneously and automatically selects the best performer based on R² score, saving it for instant future predictions.</p>
+                <div style="margin-top: 1rem;">
+                    <span style="display: inline-block; background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-yellow);">Smart Pick</span>
+                </div>
+            </div>
+
+            <div class="tilt-card fade-in stagger-4">
+                <div class="glow-border"></div>
+                <div class="card-icon">📈</div>
+                <h3>Interactive Visualizations</h3>
+                <p>Stunning Plotly-powered charts including candlesticks with moving averages, volume bars, daily returns, Bollinger Bands overlay, and RSI/MACD subplots.</p>
+                <div style="margin-top: 1rem;">
+                    <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid rgba(0,240,255,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-cyan);">Plotly</span>
+                    <span style="display: inline-block; background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-purple); margin-left: 0.5rem;">Interactive</span>
+                </div>
+            </div>
+
+            <div class="tilt-card fade-in stagger-5">
+                <div class="glow-border"></div>
+                <div class="card-icon">🔮</div>
+                <h3>Multi-Day Forecasting</h3>
+                <p>Recursive prediction engine forecasts up to 30 trading days ahead, skipping weekends, with full trajectory visualization and downloadable CSV reports.</p>
+                <div style="margin-top: 1rem;">
+                    <span style="display: inline-block; background: rgba(244,114,182,0.1); border: 1px solid rgba(244,114,182,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-pink);">30 Days</span>
+                </div>
+            </div>
+
+            <div class="tilt-card fade-in stagger-6">
+                <div class="glow-border"></div>
+                <div class="card-icon">📁</div>
+                <h3>CSV Upload Support</h3>
+                <p>Upload your own custom stock datasets with Date, Open, High, Low, Close, Volume columns. Perfect for private equities, crypto, or backtesting strategies.</p>
+                <div style="margin-top: 1rem;">
+                    <span style="display: inline-block; background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-green);">Custom Data</span>
+                </div>
+            </div>
+
+            <div class="tilt-card fade-in stagger-1">
+                <div class="glow-border"></div>
+                <div class="card-icon">🧠</div>
+                <h3>AI Explanation Engine</h3>
+                <p>Generates human-readable market analysis explaining trends, volatility levels, RSI momentum states, and prediction rationale in natural language.</p>
+                <div style="margin-top: 1rem;">
+                    <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid rgba(0,240,255,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-cyan);">NLP</span>
+                </div>
+            </div>
+
+            <div class="tilt-card fade-in stagger-2">
+                <div class="glow-border"></div>
+                <div class="card-icon">⚡</div>
+                <h3>Cyberpunk UI Theme</h3>
+                <p>Dark futuristic interface with neon cyan and purple accents, glassmorphism panels, glowing effects, and Orbitron typography for a premium experience.</p>
+                <div style="margin-top: 1rem;">
+                    <span style="display: inline-block; background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-purple);">Glassmorphism</span>
+                </div>
+            </div>
+
+            <div class="tilt-card fade-in stagger-3">
+                <div class="glow-border"></div>
+                <div class="card-icon">💾</div>
+                <h3>Model Persistence</h3>
+                <p>Best model, scaler, and feature list automatically serialized with joblib. Reload instantly without retraining for faster subsequent predictions.</p>
+                <div style="margin-top: 1rem;">
+                    <span style="display: inline-block; background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-yellow);">joblib</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section grid-pattern">
+        <div class="section-header fade-in">
+            <span class="section-label">Tech Stack</span>
+            <h2 class="section-title">Built With Modern Tools</h2>
+        </div>
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div class="glass-card fade-in" style="margin-bottom: 1rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h3 style="margin-bottom: 0.3rem;">🐍 Python 3.11+</h3>
+                        <p style="font-size: 0.85rem;">Core language powering the entire backend</p>
+                    </div>
+                    <div class="progress-bar-container" style="width: 200px;">
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="100" style="width: 0%"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card fade-in stagger-1" style="margin-bottom: 1rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h3 style="margin-bottom: 0.3rem;">🌊 Streamlit</h3>
+                        <p style="font-size: 0.85rem;">Interactive web UI framework</p>
+                    </div>
+                    <div class="progress-bar-container" style="width: 200px;">
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="95" style="width: 0%"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card fade-in stagger-2" style="margin-bottom: 1rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h3 style="margin-bottom: 0.3rem;">🤖 scikit-learn</h3>
+                        <p style="font-size: 0.85rem;">Machine learning models and pipelines</p>
+                    </div>
+                    <div class="progress-bar-container" style="width: 200px;">
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="90" style="width: 0%"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card fade-in stagger-3" style="margin-bottom: 1rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h3 style="margin-bottom: 0.3rem;">📊 Plotly</h3>
+                        <p style="font-size: 0.85rem;">Interactive financial visualizations</p>
+                    </div>
+                    <div class="progress-bar-container" style="width: 200px;">
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="85" style="width: 0%"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card fade-in stagger-4" style="margin-bottom: 1rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h3 style="margin-bottom: 0.3rem;">📈 yFinance</h3>
+                        <p style="font-size: 0.85rem;">Real-time stock market data source</p>
+                    </div>
+                    <div class="progress-bar-container" style="width: 200px;">
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="80" style="width: 0%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">📈 NeuralTrade AI</div>
+                <p class="footer-desc">Advanced ML stock price prediction system. Built by issu321.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/issu321" target="_blank">🐙</a>
+                    <a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank">📦</a>
+                </div>
+            </div>
+            <div>
+                <div class="footer-title">Product</div>
+                <ul class="footer-links">
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="demo.html">Live Demo</a></li>
+                    <li><a href="models.html">ML Models</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-title">Resources</div>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank">Documentation</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-title">Developer</div>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/issu321" target="_blank">GitHub: issu321</a></li>
+                    <li><a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank">Repository</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Developed by <a href="https://github.com/issu321" target="_blank">issu321</a> | NeuralTrade AI © 2026</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/three-scene.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

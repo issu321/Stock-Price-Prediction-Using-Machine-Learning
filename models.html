@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Models | NeuralTrade AI</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <canvas id="three-canvas"></canvas>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo"><span>📈</span> NeuralTrade</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="demo.html">Live Demo</a></li>
+            <li><a href="models.html" class="active">Models</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank" class="nav-cta">GitHub ↗</a>
+        <button class="mobile-menu-btn">☰</button>
+    </nav>
+
+    <section class="hero" style="min-height: 50vh; padding-top: 10rem;">
+        <div class="hero-content">
+            <div class="hero-badge fade-in">Machine Learning</div>
+            <h1 class="hero-title fade-in stagger-1">4 Models.<br>One Winner.</h1>
+            <p class="hero-subtitle fade-in stagger-2">
+                NeuralTrade AI trains and compares four distinct machine learning algorithms,
+                automatically selecting the best performer for your stock predictions.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header fade-in">
+            <span class="section-label">Algorithms</span>
+            <h2 class="section-title">Model Comparison</h2>
+            <p class="section-subtitle">Each model brings unique strengths to stock price prediction.</p>
+        </div>
+
+        <div class="features-grid" style="max-width: 1200px; margin: 0 auto;">
+            <!-- Linear Regression -->
+            <div class="model-card fade-in stagger-1">
+                <div class="model-header">
+                    <div class="model-icon">📐</div>
+                    <div>
+                        <div class="model-name">Linear Regression</div>
+                        <div class="model-score">Baseline Model</div>
+                    </div>
+                </div>
+                <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                    A parametric model that captures linear relationships between features and target prices. 
+                    Fast, interpretable, and serves as the baseline for comparison.
+                </p>
+                <div class="model-metrics">
+                    <div class="model-metric">
+                        <div class="model-metric-label">Speed</div>
+                        <div class="model-metric-value">⚡ Instant</div>
+                    </div>
+                    <div class="model-metric">
+                        <div class="model-metric-label">Complexity</div>
+                        <div class="model-metric-value">Low</div>
+                    </div>
+                    <div class="model-metric">
+                        <div class="model-metric-label">R² Range</div>
+                        <div class="model-metric-value">0.80-0.92</div>
+                    </div>
+                    <div class="model-metric">
+                        <div class="model-metric-label">Best For</div>
+                        <div class="model-metric-value">Trends</div>
+                    </div>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid rgba(0,240,255,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-cyan);">Parametric</span>
+                    <span style="display: inline-block; background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-green); margin-left: 0.5rem;">Fast</span>
+                </div>
+            </div>
+
+            <!-- Random Forest -->
+            <div class="model-card winner fade-in stagger-2">
+                <div class="model-header">
+                    <div class="model-icon">🌲</div>
+                    <div>
+                        <div class="model-name">Random Forest</div>
+                        <div class="model-score" style="color: var(--neon-green);">🏆 Most Accurate</div>
+                    </div>
+                </div>
+                <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                    An ensemble of 200 decision trees that averages predictions to reduce overfitting. 
+                    Handles non-linear relationships and provides feature importance rankings.
+                </p>
+                <div class="model-metrics">
+                    <div class="model-metric">
+                        <div class="model-metric-label">Speed</div>
+                        <div class="model-metric-value">⚡ Fast</div>
+                    </div>
+                    <div class="model-metric">
+                        <div class="model-metric-label">Complexity</div>
+                        <div class="model-metric-value">Medium</div>
+                    </div>
+                    <div class="model-metric">
+                        <div class="model-metric-label">R² Range</div>
+                        <div class="model-metric-value">0.92-0.98</div>
+                    </div>
+                    <div class="model-metric">
+                        <div class="model-metric-label">Best For</div>
+                        <div class="model-metric-value">Robustness</div>
+                    </div>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <span style="display: inline-block; background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-green);">Ensemble</span>
+                    <span style="display: inline-block; background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-yellow); margin-left: 0.5rem;">Feature Importance</span>
+                </div>
+            </div>
+
+            <!-- Decision Tree -->
+            <div class="model-card fade-in stagger-3">
+                <div class="model-header">
+                    <div class="model-icon">🌳</div>
+                    <div>
+                        <div class="model-name">Decision Tree</div>
+                        <div class="model-score">Interpretable Rules</div>
+                    </div>
+                </div>
+                <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                    A single tree-based model that splits data based on feature thresholds. 
+                    Highly interpretable — you can literally trace the decision path for any prediction.
+                </p>
+                <div class="model-metrics">
+                    <div class="model-metric">
+                        <div class="model-metric-label">Speed</div>
+                        <div class="model-metric-value">⚡ Fast</div>
+                    </div>
+                    <div class="model-metric">
+                        <div class="model-metric-label">Complexity</div>
+                        <div class="model-metric-value">Low</div>
+                    </div>
+                    <div class="model-metric">
+                        <div class="model-metric-label">R² Range</div>
+                        <div class="model-metric-value">0.75-0.90</div>
+                    </div>
+                    <div class="model-metric">
+                        <div class="model-metric-label">Best For</div>
+                        <div class="model-metric-value">Explainability</div>
+                    </div>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <span style="display: inline-block; background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-purple);">Tree-Based</span>
+                    <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid rgba(0,240,255,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-cyan); margin-left: 0.5rem;">No Scaling</span>
+                </div>
+            </div>
+
+            <!-- Support Vector Regressor -->
+            <div class="model-card fade-in stagger-4">
+                <div class="model-header">
+                    <div class="model-icon">🎯</div>
+                    <div>
+                        <div class="model-name">Support Vector Regressor</div>
+                        <div class="model-score">Kernel-Based</div>
+                    </div>
+                </div>
+                <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Uses RBF kernel to map features into higher-dimensional space for non-linear regression. 
+                    Effective when relationships are complex but training data is limited.
+                </p>
+                <div class="model-metrics">
+                    <div class="model-metric">
+                        <div class="model-metric-label">Speed</div>
+                        <div class="model-metric-value">🐢 Slow</div>
+                    </div>
+                    <div class="model-metric">
+                        <div class="model-metric-label">Complexity</div>
+                        <div class="model-metric-value">High</div>
+                    </div>
+                    <div class="model-metric">
+                        <div class="model-metric-label">R² Range</div>
+                        <div class="model-metric-value">0.70-0.88</div>
+                    </div>
+                    <div class="model-metric">
+                        <div class="model-metric-label">Best For</div>
+                        <div class="model-metric-value">Complex Patterns</div>
+                    </div>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <span style="display: inline-block; background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-red);">Kernel</span>
+                    <span style="display: inline-block; background: rgba(244,114,182,0.1); border: 1px solid rgba(244,114,182,0.2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; color: var(--neon-pink); margin-left: 0.5rem;">RBF</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section grid-pattern">
+        <div class="section-header fade-in">
+            <span class="section-label">Pipeline</span>
+            <h2 class="section-title">ML Pipeline Architecture</h2>
+        </div>
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div class="terminal fade-in">
+                <pre><span class="cmd">┌─────────────────────────────────────────────────────────────┐</span>
+<span class="cmd">│  1. DATA INGESTION                                          │</span>
+<span class="output">│     yFinance API → OHLCV DataFrame (Date, Open, High, ...)  │</span>
+<span class="cmd">│</span>
+<span class="cmd">│  2. FEATURE ENGINEERING                                     │</span>
+<span class="output">│     Daily Returns | Moving Averages | RSI | MACD | Lags   │</span>
+<span class="cmd">│</span>
+<span class="cmd">│  3. PREPROCESSING                                         │</span>
+<span class="output">│     StandardScaler → Time-Series Split (shuffle=False)    │</span>
+<span class="cmd">│</span>
+<span class="cmd">│  4. MODEL TRAINING                                        │</span>
+<span class="output">│     Linear Reg. | Random Forest | Decision Tree | SVR     │</span>
+<span class="cmd">│</span>
+<span class="cmd">│  5. EVALUATION                                            │</span>
+<span class="output">│     R² Score | MAE | RMSE | MAPE → Select Best Model      │</span>
+<span class="cmd">│</span>
+<span class="cmd">│  6. PERSISTENCE                                           │</span>
+<span class="output">│     joblib.dump() → Save model + scaler + features        │</span>
+<span class="cmd">│</span>
+<span class="cmd">│  7. FORECASTING                                           │</span>
+<span class="output">│     Recursive prediction → 1-30 days ahead                  │</span>
+<span class="cmd">└─────────────────────────────────────────────────────────────┘</span></pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header fade-in">
+            <span class="section-label">Metrics</span>
+            <h2 class="section-title">Evaluation Criteria</h2>
+        </div>
+        <div class="features-grid" style="max-width: 1000px; margin: 0 auto;">
+            <div class="glass-card fade-in stagger-1">
+                <div class="card-icon">📊</div>
+                <h3>R² Score</h3>
+                <p>Coefficient of determination. Measures how much variance in stock prices is explained by the model. <strong>1.0 = perfect prediction.</strong></p>
+                <div style="margin-top: 1rem; font-family: var(--font-display); color: var(--neon-cyan); font-size: 0.9rem;">
+                    R² = 1 − (SS_res / SS_tot)
+                </div>
+            </div>
+            <div class="glass-card fade-in stagger-2">
+                <div class="card-icon">📏</div>
+                <h3>MAE</h3>
+                <p>Mean Absolute Error. Average dollar difference between predicted and actual prices. <strong>Lower is better.</strong></p>
+                <div style="margin-top: 1rem; font-family: var(--font-display); color: var(--neon-cyan); font-size: 0.9rem;">
+                    MAE = mean(|y − ŷ|)
+                </div>
+            </div>
+            <div class="glass-card fade-in stagger-3">
+                <div class="card-icon">📐</div>
+                <h3>RMSE</h3>
+                <p>Root Mean Squared Error. Penalizes large errors more heavily than MAE. <strong>Lower is better.</strong></p>
+                <div style="margin-top: 1rem; font-family: var(--font-display); color: var(--neon-cyan); font-size: 0.9rem;">
+                    RMSE = √mean((y − ŷ)²)
+                </div>
+            </div>
+            <div class="glass-card fade-in stagger-4">
+                <div class="card-icon">📉</div>
+                <h3>MAPE</h3>
+                <p>Mean Absolute Percentage Error. Expresses error as a percentage of actual price. <strong>&lt;10% is excellent.</strong></p>
+                <div style="margin-top: 1rem; font-family: var(--font-display); color: var(--neon-cyan); font-size: 0.9rem;">
+                    MAPE = mean(|y − ŷ| / y) × 100
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">📈 NeuralTrade AI</div>
+                <p class="footer-desc">Advanced ML stock price prediction system. Built by issu321.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/issu321" target="_blank">🐙</a>
+                    <a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank">📦</a>
+                </div>
+            </div>
+            <div>
+                <div class="footer-title">Product</div>
+                <ul class="footer-links">
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="demo.html">Live Demo</a></li>
+                    <li><a href="models.html">ML Models</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-title">Resources</div>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank">Documentation</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-title">Developer</div>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/issu321" target="_blank">GitHub: issu321</a></li>
+                    <li><a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank">Repository</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Developed by <a href="https://github.com/issu321" target="_blank">issu321</a> | NeuralTrade AI © 2026</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/three-scene.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

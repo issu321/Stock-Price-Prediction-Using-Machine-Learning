@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Demo | NeuralTrade AI</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <canvas id="three-canvas"></canvas>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo"><span>📈</span> NeuralTrade</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="demo.html" class="active">Live Demo</a></li>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank" class="nav-cta">GitHub ↗</a>
+        <button class="mobile-menu-btn">☰</button>
+    </nav>
+
+    <section class="hero" style="min-height: 50vh; padding-top: 10rem;">
+        <div class="hero-content">
+            <div class="hero-badge fade-in">Interactive Simulation</div>
+            <h1 class="hero-title fade-in stagger-1">Live Prediction Demo</h1>
+            <p class="hero-subtitle fade-in stagger-2">
+                Experience how NeuralTrade AI analyzes stock data and generates ML-powered predictions in real-time.
+                This is a browser-based simulation of the actual Streamlit application.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="demo-container">
+            <!-- Demo Dashboard -->
+            <div class="demo-dashboard fade-in">
+                <div class="demo-header">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="font-family: var(--font-display); color: var(--neon-cyan); font-size: 1.2rem;">⚙️ Control Panel</span>
+                    </div>
+                    <div class="demo-input-group">
+                        <input type="text" id="demo-ticker" class="demo-input" value="AAPL" maxlength="10">
+                        <select id="demo-period" class="demo-select">
+                            <option value="1y">1 Year</option>
+                            <option value="2y">2 Years</option>
+                            <option value="5y">5 Years</option>
+                        </select>
+                        <button id="demo-btn" class="demo-btn">🔮 Predict</button>
+                    </div>
+                </div>
+
+                <!-- Metrics -->
+                <div id="demo-metrics" class="demo-metrics">
+                    <div class="demo-metric">
+                        <div class="demo-metric-label">Current Price</div>
+                        <div class="demo-metric-value">$175.50</div>
+                    </div>
+                    <div class="demo-metric">
+                        <div class="demo-metric-label">Predicted</div>
+                        <div class="demo-metric-value" style="color: var(--neon-green);">$178.92</div>
+                    </div>
+                    <div class="demo-metric">
+                        <div class="demo-metric-label">R² Score</div>
+                        <div class="demo-metric-value">0.9472</div>
+                    </div>
+                    <div class="demo-metric">
+                        <div class="demo-metric-label">Confidence</div>
+                        <div class="demo-metric-value">89%</div>
+                    </div>
+                </div>
+
+                <!-- Chart -->
+                <div id="demo-chart" class="demo-chart-container">
+                    <canvas id="demo-canvas" width="800" height="350" style="width: 100%; height: 100%;"></canvas>
+                </div>
+
+                <!-- Prediction Text -->
+                <div id="demo-prediction">
+                    <div class="info-box" style="margin-top: 1.5rem;">
+                        <h4 style="color: var(--neon-cyan); margin-top: 0;">🧠 AI Analysis for AAPL</h4>
+                        <p>ML models predict the price will likely <strong style="color: var(--neon-green);">rise</strong> 
+                        from <strong>$175.50</strong> to approximately <strong>$178.92</strong>.</p>
+                        <p>Best model: <strong style="color: var(--neon-green);">Random Forest</strong> with R² = 0.9472</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Model Comparison Mini -->
+            <div class="glass-card fade-in stagger-1" style="margin-top: 2rem;">
+                <h3 style="font-family: var(--font-display); color: #fff; margin-bottom: 1.5rem;">📊 Model Performance Comparison</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div style="background: rgba(0,0,0,0.3); border-radius: 12px; padding: 1rem; border: 1px solid rgba(0,240,255,0.15);">
+                        <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.5rem;">Random Forest</div>
+                        <div style="font-family: var(--font-display); font-size: 1.5rem; color: var(--neon-green);">0.9472</div>
+                        <div style="font-size: 0.75rem; color: #64748b;">R² Score (Best)</div>
+                        <div class="progress-bar-container" style="margin-top: 0.5rem;">
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="95" style="width: 95%"></div></div>
+                        </div>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.3); border-radius: 12px; padding: 1rem; border: 1px solid rgba(167,139,250,0.15);">
+                        <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.5rem;">Linear Regression</div>
+                        <div style="font-family: var(--font-display); font-size: 1.5rem; color: var(--neon-purple);">0.8912</div>
+                        <div style="font-size: 0.75rem; color: #64748b;">R² Score</div>
+                        <div class="progress-bar-container" style="margin-top: 0.5rem;">
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="89" style="width: 89%"></div></div>
+                        </div>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.3); border-radius: 12px; padding: 1rem; border: 1px solid rgba(52,211,153,0.15);">
+                        <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.5rem;">Decision Tree</div>
+                        <div style="font-family: var(--font-display); font-size: 1.5rem; color: var(--neon-cyan);">0.8234</div>
+                        <div style="font-size: 0.75rem; color: #64748b;">R² Score</div>
+                        <div class="progress-bar-container" style="margin-top: 0.5rem;">
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="82" style="width: 82%"></div></div>
+                        </div>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.3); border-radius: 12px; padding: 1rem; border: 1px solid rgba(248,113,113,0.15);">
+                        <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.5rem;">Support Vector</div>
+                        <div style="font-family: var(--font-display); font-size: 1.5rem; color: var(--neon-red);">0.7561</div>
+                        <div style="font-size: 0.75rem; color: #64748b;">R² Score</div>
+                        <div class="progress-bar-container" style="margin-top: 0.5rem;">
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="76" style="width: 76%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Importance -->
+            <div class="glass-card fade-in stagger-2" style="margin-top: 2rem;">
+                <h3 style="font-family: var(--font-display); color: #fff; margin-bottom: 1.5rem;">🔍 Top Feature Importances (Random Forest)</h3>
+                <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="width: 120px; font-size: 0.85rem; color: #94a3b8;">Close_Lag_1</span>
+                        <div class="progress-bar-container" style="flex: 1;">
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="92" style="width: 92%"></div></div>
+                        </div>
+                        <span style="width: 50px; text-align: right; font-family: var(--font-display); color: var(--neon-cyan);">0.92</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="width: 120px; font-size: 0.85rem; color: #94a3b8;">MA_20</span>
+                        <div class="progress-bar-container" style="flex: 1;">
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="78" style="width: 78%"></div></div>
+                        </div>
+                        <span style="width: 50px; text-align: right; font-family: var(--font-display); color: var(--neon-cyan);">0.78</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="width: 120px; font-size: 0.85rem; color: #94a3b8;">EMA_10</span>
+                        <div class="progress-bar-container" style="flex: 1;">
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="65" style="width: 65%"></div></div>
+                        </div>
+                        <span style="width: 50px; text-align: right; font-family: var(--font-display); color: var(--neon-cyan);">0.65</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="width: 120px; font-size: 0.85rem; color: #94a3b8;">RSI</span>
+                        <div class="progress-bar-container" style="flex: 1;">
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="54" style="width: 54%"></div></div>
+                        </div>
+                        <span style="width: 50px; text-align: right; font-family: var(--font-display); color: var(--neon-cyan);">0.54</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="width: 120px; font-size: 0.85rem; color: #94a3b8;">Volume</span>
+                        <div class="progress-bar-container" style="flex: 1;">
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="41" style="width: 41%"></div></div>
+                        </div>
+                        <span style="width: 50px; text-align: right; font-family: var(--font-display); color: var(--neon-cyan);">0.41</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section grid-pattern">
+        <div class="fade-in" style="text-align: center; max-width: 700px; margin: 0 auto;">
+            <h2 class="section-title" style="margin-bottom: 1.5rem;">Want the Real Thing?</h2>
+            <p class="section-subtitle" style="margin-bottom: 2rem;">
+                This demo simulates the Streamlit app. Run the actual application locally for real yFinance data and live ML training.
+            </p>
+            <div class="hero-buttons" style="justify-content: center;">
+                <a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank" class="btn-primary">📥 Download Project</a>
+                <a href="models.html" class="btn-secondary">🤖 View Models</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">📈 NeuralTrade AI</div>
+                <p class="footer-desc">Advanced ML stock price prediction system. Built by issu321.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/issu321" target="_blank">🐙</a>
+                    <a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank">📦</a>
+                </div>
+            </div>
+            <div>
+                <div class="footer-title">Product</div>
+                <ul class="footer-links">
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="demo.html">Live Demo</a></li>
+                    <li><a href="models.html">ML Models</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-title">Resources</div>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank">Documentation</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-title">Developer</div>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/issu321" target="_blank">GitHub: issu321</a></li>
+                    <li><a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank">Repository</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Developed by <a href="https://github.com/issu321" target="_blank">issu321</a> | NeuralTrade AI © 2026</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/three-scene.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

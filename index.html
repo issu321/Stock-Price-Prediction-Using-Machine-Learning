@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuralTrade AI | 3D Stock Price Prediction</title>
+    <meta name="description" content="AI-powered stock price prediction using machine learning. Built by issu321.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="three-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo"><span>📈</span> NeuralTrade</a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="demo.html">Live Demo</a></li>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank" class="nav-cta">GitHub ↗</a>
+        <button class="mobile-menu-btn">☰</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge fade-in">
+                <span class="pulse"></span>
+                AI-Powered Financial Analytics
+            </div>
+            <h1 class="hero-title fade-in stagger-1">
+                Predict the Future<br>of <span class="typing-text" data-text="Stock Markets">Stock Markets</span>
+            </h1>
+            <p class="hero-subtitle fade-in stagger-2">
+                NeuralTrade AI uses advanced machine learning algorithms to analyze historical stock data, 
+                compare predictive models, and forecast future prices with stunning visualizations.
+            </p>
+            <div class="hero-buttons fade-in stagger-3">
+                <a href="demo.html" class="btn-primary">🚀 Try Live Demo</a>
+                <a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank" class="btn-secondary">⭐ Star on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section grid-pattern">
+        <div class="section-header fade-in">
+            <span class="section-label">By The Numbers</span>
+            <h2 class="section-title">Powerful at Scale</h2>
+            <p class="section-subtitle">Built for production-grade financial analytics with enterprise-level performance.</p>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card fade-in stagger-1">
+                <div class="stat-number"><span class="counter" data-target="4" data-suffix="+">0</span></div>
+                <div class="stat-label">ML Models Compared</div>
+            </div>
+            <div class="stat-card fade-in stagger-2">
+                <div class="stat-number"><span class="counter" data-target="30" data-suffix="+">0</span></div>
+                <div class="stat-label">Engineered Features</div>
+            </div>
+            <div class="stat-card fade-in stagger-3">
+                <div class="stat-number"><span class="counter" data-target="1260" data-suffix="">0</span></div>
+                <div class="stat-label">Days of Sample Data</div>
+            </div>
+            <div class="stat-card fade-in stagger-4">
+                <div class="stat-number"><span class="counter" data-target="99" data-suffix="%">0</span></div>
+                <div class="stat-label">Prediction Confidence</div>
+            </div>
+            <div class="stat-card fade-in stagger-5">
+                <div class="stat-number"><span class="counter" data-target="100" data-suffix="%">0</span></div>
+                <div class="stat-label">Open Source</div>
+            </div>
+            <div class="stat-card fade-in stagger-6">
+                <div class="stat-number"><span class="counter" data-target="1" data-suffix="">0</span></div>
+                <div class="stat-label">Command to Run</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Preview Section -->
+    <section class="section">
+        <div class="section-header fade-in">
+            <span class="section-label">Core Capabilities</span>
+            <h2 class="section-title">Everything You Need</h2>
+            <p class="section-subtitle">A complete stock prediction platform powered by cutting-edge machine learning.</p>
+        </div>
+        <div class="features-grid">
+            <div class="glass-card fade-in stagger-1">
+                <div class="card-icon">🔮</div>
+                <h3>Real-Time Predictions</h3>
+                <p>Fetch live stock data via yFinance and generate next-day price predictions using trained ML models with confidence intervals.</p>
+            </div>
+            <div class="glass-card fade-in stagger-2">
+                <div class="card-icon">🤖</div>
+                <h3>4 ML Models</h3>
+                <p>Train and compare Linear Regression, Random Forest, Decision Tree, and Support Vector Regressor side-by-side.</p>
+            </div>
+            <div class="glass-card fade-in stagger-3">
+                <div class="card-icon">📊</div>
+                <h3>Interactive Charts</h3>
+                <p>Candlestick charts, volume analysis, moving averages, Bollinger Bands, RSI, and MACD — all rendered with Plotly.</p>
+            </div>
+            <div class="glass-card fade-in stagger-4">
+                <div class="card-icon">🧠</div>
+                <h3>AI Explanation</h3>
+                <p>Auto-generated readable market analysis that explains trends, volatility, momentum, and prediction rationale.</p>
+            </div>
+            <div class="glass-card fade-in stagger-5">
+                <div class="card-icon">📅</div>
+                <h3>Future Forecasting</h3>
+                <p>Recursive multi-day price forecasting engine that predicts up to 30 days ahead with trend visualization.</p>
+            </div>
+            <div class="glass-card fade-in stagger-6">
+                <div class="card-icon">💾</div>
+                <h3>Model Persistence</h3>
+                <p>Automatically saves the best-performing model using joblib for instant reloading and future predictions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terminal Preview Section -->
+    <section class="section grid-pattern">
+        <div class="section-header fade-in">
+            <span class="section-label">Quick Start</span>
+            <h2 class="section-title">One Command Away</h2>
+            <p class="section-subtitle">Get the entire platform running locally in under 60 seconds.</p>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto;" class="fade-in">
+            <div class="terminal">
+                <pre><span class="cmd">$</span> <span class="output">git clone https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning.git</span>
+<span class="cmd">$</span> <span class="output">cd Stock-Price-Prediction-Using-Machine-Learning</span>
+<span class="cmd">$</span> <span class="output">chmod +x install.sh && ./install.sh</span>
+
+<span class="success">✅ Installation complete!</span>
+<span class="success">🚀 Launching NeuralTrade AI...</span>
+
+<span class="output">  You can now view your Streamlit app in your browser.</span>
+<span class="output">  Local URL: http://localhost:8501</span>
+<span class="output">  Network URL: http://192.168.1.100:8501</span></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
+        <div class="fade-in" style="text-align: center; max-width: 700px; margin: 0 auto;">
+            <h2 class="section-title" style="margin-bottom: 1.5rem;">Ready to Predict?</h2>
+            <p class="section-subtitle" style="margin-bottom: 2rem;">
+                Experience the full power of NeuralTrade AI. Launch the live demo or explore the codebase on GitHub.
+            </p>
+            <div class="hero-buttons" style="justify-content: center;">
+                <a href="demo.html" class="btn-primary">🚀 Launch Demo</a>
+                <a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank" class="btn-secondary">📂 View Code</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">📈 NeuralTrade AI</div>
+                <p class="footer-desc">
+                    Advanced machine learning stock price prediction system. 
+                    Built with Python, Streamlit, and scikit-learn.
+                </p>
+                <div class="footer-social">
+                    <a href="https://github.com/issu321" target="_blank" title="GitHub">🐙</a>
+                    <a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank" title="Repository">📦</a>
+                </div>
+            </div>
+            <div>
+                <div class="footer-title">Product</div>
+                <ul class="footer-links">
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="demo.html">Live Demo</a></li>
+                    <li><a href="models.html">ML Models</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-title">Resources</div>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning#installation" target="_blank">Documentation</a></li>
+                    <li><a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning#machine-learning-explanation" target="_blank">ML Guide</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-title">Developer</div>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/issu321" target="_blank">GitHub: issu321</a></li>
+                    <li><a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank">Repository</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Developed by <a href="https://github.com/issu321" target="_blank">issu321</a> | NeuralTrade AI © 2026</p>
+            <p style="margin-top: 0.5rem; font-size: 0.75rem;">
+                <a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning" target="_blank">github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/three-scene.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
